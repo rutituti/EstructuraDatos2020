@@ -109,6 +109,13 @@ void Rational::operator= (const Rational &right) {
 }
 
 void Rational::operator+= (const Rational &right) {
+  cout<<"\n"<<"Numerador (1):"<<numerator<<endl;
+  cout<<"Numerador (2):"<<right.numerator<<endl;
+  if(denominator == right.denominator){
+    numerator = numerator + right.numerator;
+  }
+ 
+  normalize();
 }
 
 Rational operator+ (const Rational &left, const Rational &right) {
