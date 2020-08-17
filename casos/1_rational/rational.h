@@ -93,6 +93,10 @@ void Rational::normalize() {
     numerator = numerator/numerator;
     //std::cout<<denominator/numerator<<"\n";
   }
+    if(denominator<0){
+    denominator = denominator*-1;
+    numerator = numerator*-1;
+  }
 }
 
 void Rational::operator= (const Rational &right) {
