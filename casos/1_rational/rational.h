@@ -113,8 +113,13 @@ void Rational::operator+= (const Rational &right) {
   cout<<"Numerador (2):"<<right.numerator<<endl;
   if(denominator == right.denominator){
     numerator = numerator + right.numerator;
+  }else{
+    cout<<"\n"<<"Denominator (1):"<<denominator<<endl;
+    cout<<"Denominator (2):"<<right.denominator<<endl;
+    numerator = (numerator*right.denominator)+(right.numerator*denominator);
+  cout<<"\n"<<"Numerador suma: "<<numerator<<endl;
   }
- 
+
   normalize();
 }
 
