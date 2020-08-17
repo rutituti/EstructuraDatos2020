@@ -46,13 +46,9 @@ Rational::Rational(int num){
 }
 
 Rational::Rational(int num, int dem){
-    if (dem == 0){
-        numerator = 0;
-        denominator = 1;
-    }else{
         numerator = num;
         denominator = dem;
-    }
+    
     normalize();
 }
 
@@ -96,6 +92,9 @@ void Rational::normalize() {
     if(denominator<0){
     denominator = denominator*-1;
     numerator = numerator*-1;
+  }
+  if (denominator == 0){
+    throw RangeError();
   }
 }
 
