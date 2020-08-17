@@ -12,6 +12,8 @@
 #include <string>
 #include <sstream>
 
+using namespace std;
+
 class Rational {
 private:
 	int numerator;
@@ -87,7 +89,7 @@ void Rational::normalize() {
   if(denominator%numerator ==0){
     denominator = denominator/numerator;
     numerator = numerator/numerator;
-    //std::cout<<denominator/numerator<<"\n";
+    //cout<<denominator/numerator<<"\n";
   }
     if(denominator<0){
     denominator = denominator*-1;
@@ -99,6 +101,10 @@ void Rational::normalize() {
 }
 
 void Rational::operator= (const Rational &right) {
+  //cout<< right.numerator<<"\n";
+  //cout<< right.denominator<<"\n";
+  numerator = right.numerator;
+  denominator = right.denominator;
   normalize();
 }
 
