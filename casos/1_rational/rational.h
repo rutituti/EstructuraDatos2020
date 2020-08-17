@@ -1,8 +1,8 @@
  /*
  * rational.h
  *
- *  Created on: 05/08/2015
- *      Author: pperezm
+ *  Created on: 17/08/2020
+ *      Author: Ruth
  */
 
 #ifndef RATIONAL_H_
@@ -53,6 +53,7 @@ Rational::Rational(int num, int dem){
         numerator = num;
         denominator = dem;
     }
+    normalize();
 }
 
 int Rational::getNumerator() const {
@@ -87,6 +88,11 @@ int gcd(int a, int b) {
 }
 
 void Rational::normalize() {
+  if(denominator%numerator ==0){
+    denominator = denominator/numerator;
+    numerator = numerator/numerator;
+    //std::cout<<denominator/numerator<<"\n";
+  }
 }
 
 void Rational::operator= (const Rational &right) {
