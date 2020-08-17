@@ -99,6 +99,7 @@ void Rational::normalize() {
 }
 
 void Rational::operator= (const Rational &right) {
+  normalize();
 }
 
 void Rational::operator+= (const Rational &right) {
