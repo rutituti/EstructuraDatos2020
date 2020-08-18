@@ -87,11 +87,13 @@ int gcd(int a, int b) {
 }
 
 void Rational::normalize() {
-  if(denominator%numerator ==0){
+  
+    if(denominator%numerator ==0){
     denominator = denominator/numerator;
     numerator = numerator/numerator;
     //cout<<denominator/numerator<<"\n";
-  }
+    }
+  
     if(denominator<0){
     denominator = denominator*-1;
     numerator = numerator*-1;
@@ -106,7 +108,6 @@ void Rational::operator= (const Rational &right) {
   //cout<< right.denominator<<"\n";
   numerator = right.numerator;
   denominator = right.denominator;
-  normalize();
 }
 
 void Rational::operator+= (const Rational &right) {
@@ -126,21 +127,14 @@ void Rational::operator+= (const Rational &right) {
 }
 
 Rational operator+ (const Rational &left, const Rational &right) {
-    cout<<"\n"<<"Numerador (1):"<<left.numerator<<endl;
-  cout<<"Numerador (2):"<<right.numerator<<endl;
-  if(left.denominator == right.denominator){
-    numerator = left.numerator + right.numerator;
-  }else{
-    cout<<"\n"<<"Denominator (1):"<<left.denominator<<endl;
-    cout<<"Denominator (2):"<<right.denominator<<endl;
-    numerator = (left.numerator*right.denominator)+(right.numerator*left.denominator);
-    denominator= left.denominator*right.denominator;
-  cout<<"\n"<<"Numerador suma: "<<numerator<<endl;
-  }
+  cout<<"AQUI"<<endl;
+	int num, dem;
 
-  normalize();
-}
-	return Rational();
+	num = (left.getNumerator() * right.getDenominator()) + (left.getDenominator() * right.getNumerator());
+	dem = left.getDenominator() * right.getDenominator();
+  cout<<"NUMERATOR = "<<num<<endl;
+  cout<<"DENOMINATOR = "<<dem<<endl;
+	return Rational(num, dem);
 }
 
 Rational operator- (const Rational &left, const Rational &right) {
