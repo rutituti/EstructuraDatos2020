@@ -171,7 +171,14 @@ Rational operator- (const Rational &right) {
 }
 
 bool operator== (const Rational &left, const Rational &right) {
-	return false;
+  if(gcd(left.getNumerator(),left.getDenominator()) == gcd(right.getNumerator(),right.getDenominator())){
+    cout<<"GCD LEFT = "<<gcd(left.getNumerator(),left.getDenominator())<<endl;
+    cout<<"GCD RIGHT = "<<gcd(right.getNumerator(),right.getDenominator())<<endl;
+    return true;
+  }else{
+    return false;
+  }
+	
 }
 
 bool operator<  (const Rational &left, const Rational &right) {
