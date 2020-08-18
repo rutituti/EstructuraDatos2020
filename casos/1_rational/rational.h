@@ -130,14 +130,14 @@ void Rational::operator+= (const Rational &right) {
 
 Rational operator+ (const Rational &left, const Rational &right) {
   int num=0, dem=0;
-  cout<<"\n"<<"Numerador (1):"<<left.getNumerator()<<endl;
-  cout<<"Numerador (2):"<<right.getNumerator()<<endl;
+  //cout<<"\n"<<"Numerador (1):"<<left.getNumerator()<<endl;
+  //cout<<"Numerador (2):"<<right.getNumerator()<<endl;
   if(left.getDenominator() == right.getDenominator()){
     num = left.getNumerator() + right.getNumerator();
     dem = left.getDenominator();
   }else{
-    cout<<"\n"<<"Denominator (1):"<<left.getDenominator()<<endl;
-    cout<<"Denominator (2):"<<right.getDenominator()<<endl;
+    //cout<<"\n"<<"Denominator (1):"<<left.getDenominator()<<endl;
+   // cout<<"Denominator (2):"<<right.getDenominator()<<endl;
     num = (left.getNumerator()*right.getDenominator())+(right.getNumerator()*left.getDenominator());
     dem= left.getDenominator()*right.getDenominator();
   //cout<<"\n"<<"Numerador suma: "<<numerator<<endl;
@@ -147,12 +147,27 @@ Rational operator+ (const Rational &left, const Rational &right) {
 }
 
 Rational operator- (const Rational &left, const Rational &right) {
-	return Rational();
+	 int num=0, dem=0;
+  cout<<"\n"<<"Numerador (1):"<<left.getNumerator()<<endl;
+  cout<<"Numerador (2):"<<right.getNumerator()<<endl;
+  if(left.getDenominator() == right.getDenominator()){
+    num = left.getNumerator() - right.getNumerator();
+    dem = left.getDenominator();
+  }else{
+    cout<<"\n"<<"Denominator (1):"<<left.getDenominator()<<endl;
+    cout<<"Denominator (2):"<<right.getDenominator()<<endl;
+    num = (left.getNumerator()*right.getDenominator()) -(right.getNumerator()*left.getDenominator());
+    dem= left.getDenominator()*right.getDenominator();
+  //cout<<"\n"<<"Numerador suma: "<<numerator<<endl;
+  }
+
+	return Rational(num, dem);
 }
 
 Rational operator- (const Rational &right) {
-  int num, dem;
-	return Rational();
+  int num=0;
+  num = right.getNumerator()*(-1);
+	return Rational(num,right.getDenominator());
 }
 
 bool operator== (const Rational &left, const Rational &right) {
