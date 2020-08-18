@@ -172,9 +172,9 @@ Rational operator- (const Rational &right) {
 
 bool operator== (const Rational &left, const Rational &right) {
   int num, dem;
-  num = left.getNumerator()*right.getDenominator();
-  dem = left.getDenominator()* right.getNumerator();
-  if(num==dem){
+  num = left.getNumerator() * right.getDenominator();
+  dem = left.getDenominator() * right.getNumerator();
+  if(num == dem){
     cout<<"NUM="<<num<<endl;
     cout<<"DEM="<<dem<<endl;
     return true;
@@ -185,7 +185,15 @@ bool operator== (const Rational &left, const Rational &right) {
 }
 
 bool operator<  (const Rational &left, const Rational &right) {
-	return false;
+  int numLeft,numRight;
+  numLeft = left.getNumerator() * right.getDenominator();
+  numRight = left.getDenominator() * right.getNumerator();
+  if(numLeft < numRight){
+    return true;
+  }else{
+    return false;
+  }
+	
 }
 
 #endif /* RATIONAL_H_ */
