@@ -55,11 +55,13 @@ Rational::Rational(int num, int dem){
 }
 
 int Rational::getNumerator() const {
-	return 0;
+  //cout<<"getNumerator = "<<numerator<<endl;
+	return numerator;
 }
 
 int Rational::getDenominator() const {
-	return 0;
+ // cout<<"getDenominator = "<<numerator<<endl;
+	return denominator;
 }
 
 std::string Rational::toString() const {
@@ -111,29 +113,36 @@ void Rational::operator= (const Rational &right) {
 }
 
 void Rational::operator+= (const Rational &right) {
-  cout<<"\n"<<"Numerador (1):"<<numerator<<endl;
-  cout<<"Numerador (2):"<<right.numerator<<endl;
+  //cout<<"\n"<<"Numerador (1):"<<numerator<<endl;
+  //cout<<"Numerador (2):"<<right.numerator<<endl;
   if(denominator == right.denominator){
     numerator = numerator + right.numerator;
   }else{
-    cout<<"\n"<<"Denominator (1):"<<denominator<<endl;
-    cout<<"Denominator (2):"<<right.denominator<<endl;
+   // cout<<"\n"<<"Denominator (1):"<<denominator<<endl;
+   // cout<<"Denominator (2):"<<right.denominator<<endl;
     numerator = (numerator*right.denominator)+(right.numerator*denominator);
     denominator= denominator*right.denominator;
-  cout<<"\n"<<"Numerador suma: "<<numerator<<endl;
+ // cout<<"\n"<<"Numerador suma: "<<numerator<<endl;
   }
 
   normalize();
 }
 
 Rational operator+ (const Rational &left, const Rational &right) {
-  cout<<"AQUI"<<endl;
-	int num, dem;
+  int num=0, dem=0;
+  cout<<"\n"<<"Numerador (1):"<<left.getNumerator()<<endl;
+  cout<<"Numerador (2):"<<right.getNumerator()<<endl;
+  if(left.getDenominator() == right.getDenominator()){
+    num = left.getNumerator() + right.getNumerator();
+    dem = left.getDenominator();
+  }else{
+    cout<<"\n"<<"Denominator (1):"<<left.getDenominator()<<endl;
+    cout<<"Denominator (2):"<<right.getDenominator()<<endl;
+    num = (left.getNumerator()*right.getDenominator())+(right.getNumerator()*left.getDenominator());
+    dem= left.getDenominator()*right.getDenominator();
+  //cout<<"\n"<<"Numerador suma: "<<numerator<<endl;
+  }
 
-	num = (left.getNumerator() * right.getDenominator()) + (left.getDenominator() * right.getNumerator());
-	dem = left.getDenominator() * right.getDenominator();
-  cout<<"NUMERATOR = "<<num<<endl;
-  cout<<"DENOMINATOR = "<<dem<<endl;
 	return Rational(num, dem);
 }
 
@@ -142,6 +151,7 @@ Rational operator- (const Rational &left, const Rational &right) {
 }
 
 Rational operator- (const Rational &right) {
+  int num, dem;
 	return Rational();
 }
 
