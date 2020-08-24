@@ -42,8 +42,8 @@ Timer::Timer(int hh, int mm) {
       hours = 0;
     }
     hours++;
-    cout<<"\nHours: "<<hours<<endl;
-    cout<<"\nMinutes: "<<minutes<<endl;
+   // cout<<"\nHours: "<<hours<<endl;
+   // cout<<"\nMinutes: "<<minutes<<endl;
   }
 
 }
@@ -51,9 +51,13 @@ Timer::Timer(int hh, int mm) {
 Timer::Timer(const Timer &t) {}
 
 int Timer::getHours() const {
+  cout<<"Hours= "<<hours<<endl;
+  return hours;
 }
 
 int Timer::getMinutes() const {
+  cout<<"Minutes= "<<minutes<<endl;
+  return minutes;
 }
 
 std::string Timer::toString() const {

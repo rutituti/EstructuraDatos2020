@@ -38,7 +38,7 @@ public:
 		std::cout << " PASSED.\nTest 6";
 		
 		/* TEST 6 */
-    std::cout<<Timer(10, 13).getHours()<<std::endl;
+    std::cout<<"\tMY RESULT= "<<Timer(10, 13).getHours()<<std::endl;
 		ASSERT_TRUE(10 == Timer(10, 13).getHours());
 		std::cout << " PASSED.\nTest 7";
 		
