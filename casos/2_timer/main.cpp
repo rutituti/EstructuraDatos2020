@@ -25,6 +25,7 @@ public:
 		std::cout << " PASSED.\nTest 3";
 		
 		/* TEST 3 */
+    std::cout<<Timer(0, 119).toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("01:59", Timer(0, 119).toString().c_str()));
 		std::cout << " PASSED.\nTest 4";
 		

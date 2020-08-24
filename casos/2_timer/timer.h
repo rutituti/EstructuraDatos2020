@@ -10,7 +10,7 @@
 
 #include <string>
 #include <sstream>
-
+using namespace std;
 class Timer {
 private:
 	int hours, minutes;
@@ -31,6 +31,20 @@ public:
 Timer::Timer() : hours(0), minutes(0) {}
 
 Timer::Timer(int hh, int mm) {
+  hours = hh;
+  minutes = mm;
+ 
+  while(minutes > 59){
+    
+    minutes = minutes - 60;
+    if (hours > 23){
+      hours = 0;
+    }
+    hours++;
+    cout<<"\nHours: "<<hours<<endl;
+    cout<<"\nMinutes: "<<minutes<<endl;
+  }
+
 }
 
 Timer::Timer(const Timer &t) {}
