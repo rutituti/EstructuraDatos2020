@@ -11,6 +11,7 @@
 #include <string>
 #include <sstream>
 using namespace std;
+
 class Timer {
 private:
 	int hours, minutes;
@@ -76,6 +77,7 @@ void Timer::operator+= (const Timer &right) {
 }
 
 bool operator== (const Timer &left, const Timer &right) {
+
 }
 
 bool operator> (const Timer &left, const Timer &right) {
