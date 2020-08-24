@@ -47,6 +47,7 @@ public:
 		std::cout << " PASSED.\nTest 8";
 		
 		/* TEST 8 */
+     std::cout<<"\tMY RESULT= "<<t.toString().c_str()<<std::endl;
 		t = Timer(1, 59);
 		ASSERT_TRUE(!strcmp("01:59", t.toString().c_str()));
 		std::cout << " PASSED.\nTest 9";
