@@ -42,8 +42,8 @@ Timer::Timer(int hh, int mm) {
       hours = 0;
     }
     hours++;
-    cout<<"\nHours: "<<hours<<endl;
-    cout<<"\nMinutes: "<<minutes<<endl;
+    //cout<<"\nHours: "<<hours<<endl;
+    //cout<<"\nMinutes: "<<minutes<<endl;
   }
 
 }
@@ -80,11 +80,30 @@ void Timer::operator= (const Timer &right) {
 }
 
 void Timer::operator+= (const Timer &right) {
-  int hh = hours;
-  int mm = minutes;
-  hh  += right.getHours();
-  mm  += right.getMinutes();
-  Timer(hh,mm);
+ 
+  hours  += right.getHours();
+  minutes  += right.getMinutes();
+ 
+   while(minutes > 59){
+    
+    minutes = minutes - 60;
+    
+    if (hours > 23){
+      //cout<<"\nAQUI2"<<endl;
+      hours = 0;
+    cout<<"\nHours: "<<hours<<endl;
+    cout<<"\nMinutes: "<<minutes<<endl;
+    }
+    hours++;
+
+  }
+     if (hours > 23){
+      //cout<<"\nAQUI2"<<endl;
+      hours = 0;
+      hours++;
+    cout<<"\nHours: "<<hours<<endl;
+    cout<<"\nMinutes: "<<minutes<<endl;
+    } 
 
 }
 
