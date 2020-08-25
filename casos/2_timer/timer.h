@@ -42,8 +42,8 @@ Timer::Timer(int hh, int mm) {
       hours = 0;
     }
     hours++;
-   // cout<<"\nHours: "<<hours<<endl;
-   // cout<<"\nMinutes: "<<minutes<<endl;
+    cout<<"\nHours: "<<hours<<endl;
+    cout<<"\nMinutes: "<<minutes<<endl;
   }
 
 }
@@ -80,9 +80,11 @@ void Timer::operator= (const Timer &right) {
 }
 
 void Timer::operator+= (const Timer &right) {
-
-  hours  += right.getHours();
-  minutes+= right.getMinutes();
+  int hh = hours;
+  int mm = minutes;
+  hh  += right.getHours();
+  mm  += right.getMinutes();
+  Timer(hh,mm);
 
 }
 
