@@ -108,10 +108,19 @@ void Timer::operator+= (const Timer &right) {
 }
 
 bool operator== (const Timer &left, const Timer &right) {
-
+  if(left.getHours() == right.getHours() && left.getMinutes() == right.getMinutes()){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 bool operator> (const Timer &left, const Timer &right) {
+    if(left.getHours() >= right.getHours() && left.getMinutes() >= right.getMinutes()){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 #endif /* TIMER_H_ */
