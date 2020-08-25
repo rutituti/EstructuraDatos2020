@@ -47,18 +47,21 @@ public:
 		std::cout << " PASSED.\nTest 8";
 		
 		/* TEST 8 */
-     std::cout<<"\tMY RESULT= "<<t.toString().c_str()<<std::endl;
+  
 		t = Timer(1, 59);
+    std::cout<<"\tMY RESULT= "<<t.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("01:59", t.toString().c_str()));
 		std::cout << " PASSED.\nTest 9";
 		
 		/* TEST 9 */
 		t += Timer(0, 1);
+    std::cout<<"\tMY RESULT= "<<t.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("02:00", t.toString().c_str()));
 		std::cout << " PASSED.\nTest 10";
 		
 		/* TEST 10 */
 		t += Timer(23, 1);
+    std::cout<<"\tMY RESULT= "<<t.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("01:01", t.toString().c_str()));
 		std::cout << " PASSED.\nTest 11";
 		

@@ -80,6 +80,10 @@ void Timer::operator= (const Timer &right) {
 }
 
 void Timer::operator+= (const Timer &right) {
+
+  hours  += right.getHours();
+  minutes+= right.getMinutes();
+
 }
 
 bool operator== (const Timer &left, const Timer &right) {
