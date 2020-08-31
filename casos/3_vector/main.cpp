@@ -63,6 +63,7 @@ public:
 
 		/* TEST 7 */
 		v2.resize(2);
+    std::cout<<"My answer ->"<<v2.toString().c_str()<<"\n";
 		ASSERT_TRUE(!strcmp("[1, 1]", v2.toString().c_str()));
 		std::cout << " PASSED\n Test 8...";
 
