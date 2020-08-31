@@ -84,10 +84,11 @@ unsigned int Vector<T>::resize(unsigned int newSize) throw (RangeError, OutOfMem
     throw RangeError();
 
   size = newSize;
-	data = new T[size];
+	//data = new T[size];
 
   if(data == 0)
 		throw OutOfMemory();
+
 }
 
 template <class T>
