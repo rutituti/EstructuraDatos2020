@@ -11,6 +11,8 @@
 #include "exception.h"
 #include <sstream>
 
+using namespace std;
+
 template <class T>
 class Vector {
 private:
@@ -48,8 +50,10 @@ Vector<T>::Vector(unsigned int numberOfElements, T &initialValue) throw (RangeEr
 		throw RangeError();
 	size = numberOfElements;
 	data = new T[size];
+
 	if(data == 0)
 		throw OutOfMemory();
+   
 	for(unsigned int i =0; i < size; i++){
 		data[i] = initialValue;
 	}
@@ -80,24 +84,65 @@ unsigned int Vector<T>::length() const {
 
 template <class T>
 unsigned int Vector<T>::resize(unsigned int newSize) throw (RangeError, OutOfMemory) {
-	if (newSize == 0)
-    throw RangeError();
-
-  size = newSize;
-	//data = new T[size];
-
-  if(data == 0)
+  /*
+  * Solucion en clase
+  */
+//1. Crear un vector temporal del tamaño nuevo
+  T *newData = new T[newSize];
+	if (newData == 0) {
 		throw OutOfMemory();
+	}
+
+  //2. Copiar los valores del vector actual en el  vector temporal
+  unsigned int limit = size;
+  if (newSize <= size) {
+    limit = newSize;
+  } 
+	
+  for (unsigned int i = 0; i < limit; i++) {
+			newData[i] = data[i];
+	}
+
+  //3. Borrar los datos del vector actual
+  delete [] data;
+
+  //4. Hacer que el vector actual apunte hacia el vector temporal
+  data = newData;
+  size = newSize;
+	return size;
+
 
 }
 
 template <class T>
 unsigned int Vector<T>::resize(unsigned int newSize, T &initValue) throw (RangeError, OutOfMemory) {
-	if (newSize == 0)
-    throw RangeError();
-
- 	if(data == 0)
+    /*
+  * Solucion en clase
+  */
+//1. Crear un vector temporal del tamaño nuevo
+  T *newData = new T[newSize];
+	if (newData == 0) {
 		throw OutOfMemory();
+	}
+
+  //2. Copiar los valores del vector actual en el  vector temporal
+  unsigned int limit = size;
+  if (newSize <= size) {
+    limit = newSize;
+  } 
+	
+  for (unsigned int i = 0; i < limit; i++) {
+			newData[i] = data[i];
+	}
+
+  //3. Borrar los datos del vector actual
+  delete [] data;
+
+  //4. Hacer que el vector actual apunte hacia el vector temporal
+  data = newData;
+  size = newSize;
+	return size;
+
 }
 
 template <class T>

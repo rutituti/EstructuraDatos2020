@@ -70,6 +70,7 @@ public:
 		/* TEST 8 */
 		val = 2;
 		v2.resize(10, val);
+    std::cout<<"My answer ->"<<v2.toString().c_str()<<"\n";
 		ASSERT_TRUE(!strcmp("[1, 1, 2, 2, 2, 2, 2, 2, 2, 2]", v2.toString().c_str()));
 		std::cout << " PASSED\n Test 9...";
 
