@@ -80,7 +80,9 @@ unsigned int Vector<T>::length() const {
 
 template <class T>
 unsigned int Vector<T>::resize(unsigned int newSize) throw (RangeError, OutOfMemory) {
-	return 0;
+	if (newSize == 0){
+    throw RangeError();
+  }
 }
 
 template <class T>
