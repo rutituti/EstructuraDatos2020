@@ -169,6 +169,9 @@ std::string Vector<T>::toString() const {
 
 template <class T>
 T& Vector<T>::operator[] (unsigned int index) const throw (IndexOutOfBounds) {
+	/*
+	* Solucion obtenida de la carpeta de soluciones
+	*/
 	if(index < 0 || index >= size){
 		throw 	IndexOutOfBounds();
 	}
@@ -181,6 +184,10 @@ void Vector<T>::operator=(const Vector<T> &right) {
 	cout<<"size = "<<size<<endl;
 	if(right.size != size){
 		resize(right.size);
+	}
+	
+	for(int i =0; i<size; i++){
+		data[i] = right.data[i];
 	}
 
 }
