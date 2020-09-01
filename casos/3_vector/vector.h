@@ -1,8 +1,8 @@
 /*
  * vector.h
  *
- *  Created on: 05/08/2015
- *      Author: pperezm
+ *  Created on: 01/09/2020
+ *      Author: Ruth Solis Velasco - A01703207
  */
 
 #ifndef VECTOR_H_
@@ -180,8 +180,8 @@ T& Vector<T>::operator[] (unsigned int index) const throw (IndexOutOfBounds) {
 
 template <class T>
 void Vector<T>::operator=(const Vector<T> &right) {
-	cout<<"rightsize = "<<right.size<<endl;
-	cout<<"size = "<<size<<endl;
+	//cout<<"rightsize = "<<right.size<<endl;
+	//cout<<"size = "<<size<<endl;
 	if(right.size != size){
 		resize(right.size);
 	}

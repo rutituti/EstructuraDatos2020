@@ -1,8 +1,8 @@
 /*
  * timer.h
  *
- *  Created on: 05/08/2015
- *      Author: pperezm
+ *  Created on: 26/08/2020
+ *      Author: Ruth Solis Velasco - A01703206
  */
 
 #ifndef TIMER_H_

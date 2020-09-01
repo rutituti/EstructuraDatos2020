@@ -2,7 +2,7 @@
  * rational.h
  *
  *  Created on: 17/08/2020
- *      Author: Ruth
+ *      Author: Ruth Solis Velasco - A01703206
  */
 
 #ifndef RATIONAL_H_
