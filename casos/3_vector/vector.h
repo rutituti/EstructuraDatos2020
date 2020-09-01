@@ -84,14 +84,16 @@ unsigned int Vector<T>::length() const {
 
 template <class T>
 unsigned int Vector<T>::resize(unsigned int newSize) throw (RangeError, OutOfMemory) {
+	if(newSize == 0)
+		throw RangeError();
   /*
   * Solucion en clase
   */
 //1. Crear un vector temporal del tamaño nuevo
   T *newData = new T[newSize];
-	if (newData == 0) {
+	if (newData == 0) 
 		throw OutOfMemory();
-	}
+	
 
   //2. Copiar los valores del vector actual en el  vector temporal
   unsigned int limit = size;
@@ -116,14 +118,16 @@ unsigned int Vector<T>::resize(unsigned int newSize) throw (RangeError, OutOfMem
 
 template <class T>
 unsigned int Vector<T>::resize(unsigned int newSize, T &initValue) throw (RangeError, OutOfMemory) {
-    /*
+	if(newSize == 0)
+		throw RangeError();
+  /*
   * Solucion en clase
   */
 //1. Crear un vector temporal del tamaño nuevo
   T *newData = new T[newSize];
-	if (newData == 0) {
+	if (newData == 0) 
 		throw OutOfMemory();
-	}
+	
 
   //2. Copiar los valores del vector actual en el  vector temporal
   unsigned int limit = size;
