@@ -92,6 +92,7 @@ public:
 
 		/* TEST 12 */
 		v1 = v2;
+		std::cout << "My Answer -> "<<v1.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[1, 1, 2, 2, 2, 2, 2, 2, 2, 2]", v1.toString().c_str()));
 		std::cout << " PASSED\n";
 	}

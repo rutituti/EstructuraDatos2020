@@ -177,6 +177,9 @@ T& Vector<T>::operator[] (unsigned int index) const throw (IndexOutOfBounds) {
 
 template <class T>
 void Vector<T>::operator=(const Vector<T> &right) {
+	cout<<"rightsize = "<<right.size<<endl;
+	cout<<"size = "<<size<<endl;
+
 }
 
 #endif /* VECTOR_H_ */
