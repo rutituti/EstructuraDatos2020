@@ -118,26 +118,32 @@ unsigned int Vector<T>::resize(unsigned int newSize) throw (RangeError, OutOfMem
 
 template <class T>
 unsigned int Vector<T>::resize(unsigned int newSize, T &initValue) throw (RangeError, OutOfMemory) {
-	if(newSize == 0)
-		throw RangeError();
+	if(newSize == 0){
+		throw RangeError();}
   /*
   * Solucion en clase
   */
 //1. Crear un vector temporal del tamaño nuevo
   T *newData = new T[newSize];
-	if (newData == 0) 
-		throw OutOfMemory();
+	if (newData == 0) {
+		throw OutOfMemory();}
 	
 
   //2. Copiar los valores del vector actual en el  vector temporal
   unsigned int limit = size;
-  if (newSize <= size) {
+  if (newSize >= size) {
     limit = newSize;
   } 
-	
-  for (unsigned int i = 0; i < limit; i++) {
-			newData[i] = data[i];
+ unsigned int i=0;
+  for (; i < 10; i++) {
+	  if(i<size){
+		  newData[i] = data[i];
+	  }else{
+		  newData[i] = initValue;
+	  }
+		//cout<<"INIT VALUE = "<<initValue<<endl;	
 	}
+ 
 
   //3. Borrar los datos del vector actual
   delete [] data;
