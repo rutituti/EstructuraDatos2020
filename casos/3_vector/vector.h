@@ -179,6 +179,9 @@ template <class T>
 void Vector<T>::operator=(const Vector<T> &right) {
 	cout<<"rightsize = "<<right.size<<endl;
 	cout<<"size = "<<size<<endl;
+	if(right.size != size){
+		resize(right.size);
+	}
 
 }
 
