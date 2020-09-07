@@ -93,7 +93,7 @@ List<T>::List(){
 
 template <class T>
 List<T>::~List() {
-
+	clear();
 }
 
 template <class T>
@@ -108,9 +108,11 @@ bool List<T>::empty() const {
 
 template <class T>
 int List<T>::length() const {
-	//cout<<"size = "<<size<<endl;
-	//return size;
 	
+	return size;
+
+	//SOLUCION EN CLASE
+	/*
 	int i = 0;
 	if(head == NULL){
 		return i;
@@ -124,7 +126,7 @@ int List<T>::length() const {
 		i++;
 	}
 	cout<<"size = "<<i<<endl;
-	return i;
+	return i;*/
 }
 
 template <class T>
@@ -140,7 +142,6 @@ T List<T>::getFirst() const throw (NoSuchElement) {
 template <class T>
 void List<T>::addFirst(T val) throw (OutOfMemory) {
 	//SOLUCION EN CLASE
-
 
 	//Crear nuevo nodo con el valor val
 
@@ -201,6 +202,24 @@ T List<T>::get(int index) const throw (IndexOutOfBounds, NoSuchElement) {
 
 template <class T>
 void List<T>::clear() {
+	//Verificar si esta vacia la lista
+	if (empty())
+		return;
+	
+	//Crear apuntadores, uno que apunte a head y otro al siguiente de head
+	Link<T> *actual = head, *temp;
+	while (actual != NULL){
+		temp=actual->next;
+	//Borrar el apuntador acutal
+		delete actual;
+	//Guardar el valor de temp en actual
+		actual=temp;
+	}
+	//Apuntar head a NULL y cambiar el tamaño a 0
+	head = NULL;
+	size = 0;
+	
+
 }
 
 template <class T>
