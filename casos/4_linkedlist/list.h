@@ -44,7 +44,7 @@ Link<T>::Link(T val, Link* nxt) {
 
 template <class T>
 Link<T>::Link(const Link<T> &source){
-	val = source.value;
+	value = source.value;
 	next = source.next;
 }
 

@@ -59,8 +59,10 @@ public:
 
 		/* TEST 8 */
 		b2.clear();
+		std::cout << " My Answer "<<b2.length()<<std::endl;
 		ASSERT_TRUE(0 == b2.length());
 		ASSERT_TRUE(true == b2.empty());
+		std::cout << " My Answer "<<b2.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[]", b2.toString().c_str()));
 		std::cout << " PASSED.\nTest 9";
 
