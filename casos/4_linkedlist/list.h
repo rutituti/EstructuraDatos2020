@@ -44,27 +44,8 @@ Link<T>::Link(T val, Link* nxt) {
 
 template <class T>
 Link<T>::Link(const Link<T> &source){
-
-
-	//SOLUCION EN CLASE
-
-	//Validar si la lista esta vacia
-	/*if(source.empty()){
-		head = NULL;
-		size = 0;
-		return;
-	}
-
-	//Crear apuntador
-	Link<T>*actual = source.head;
-	//Recorrer la lista source
-	while (actual !=NULL){
-		//Por cada nodo que se visita, crear un nuevo nodo
-		add(actual->value);
-		actual = actual->next;
-		
-	}*/
-	
+	val = source.value;
+	next = source.next;
 }
 
 template <class T>
@@ -160,11 +141,7 @@ template <class T>
 void List<T>::addFirst(T val) throw (OutOfMemory) {
 	//SOLUCION EN CLASE
 
-	//Verificar si la lista esta vacia, agregar al pricipio
-	/*if (empty()){
-		addFirst(val);
-		return;
-	}*/
+
 	//Crear nuevo nodo con el valor val
 
 	Link<T> *nuevo = new Link<T>(val);
@@ -183,6 +160,12 @@ void List<T>::addFirst(T val) throw (OutOfMemory) {
 template <class T>
 void List<T>::add(T val) throw (OutOfMemory) {
 	//SOLUCION EN CLASE
+
+	//Verificar si la lista esta vacia, agregar al pricipio
+	if (empty()){
+		addFirst(val);
+		return;
+	}
 
 	//Crear un nuevo nodo
 	Link<T> *nuevo = new Link<T>(val);
@@ -240,6 +223,25 @@ std::string List<T>::toString() const {
 
 template <class T>
 List<T>::List(const List<T> &source) throw (OutOfMemory) {
+		
+	//SOLUCION EN CLASE
+
+	//Validar si la lista esta vacia
+	head = NULL;
+	size = 0;
+	if(source.empty()){
+		return;
+	}
+
+	//Crear apuntador
+	Link<T>*actual = source.head;
+	//Recorrer la lista source
+	while (actual !=NULL){
+		//Por cada nodo que se visita, crear un nuevo nodo
+		add(actual->value);
+		actual = actual->next;
+		
+	}
 }
 
 template <class T>
