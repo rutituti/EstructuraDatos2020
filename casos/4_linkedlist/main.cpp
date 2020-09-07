@@ -17,15 +17,18 @@ public:
 
 		/* TEST 1 */
 		std::cout << "Test 1";
+		std::cout << " My Answer "<<b1.length()<<std::endl;
 		ASSERT_TRUE(0 == b1.length());
 		std::cout << " PASSED.\nTest 2";
 
 		/* TEST 2 */
+		std::cout << " My Answer "<<b1.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 3";
 
 		/* TEST 3 */
 		b1.addFirst(2);
+		std::cout << " My Answer "<<b1.length()<<std::endl;
 		ASSERT_TRUE(1 == b1.length());
 		ASSERT_TRUE(!strcmp("[2]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 4";

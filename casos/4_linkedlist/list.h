@@ -1,8 +1,8 @@
 /*
  * linkedlist.h
  *
- *  Created on: 05/08/2015
- *      Author: pperezm
+ *  Created on: 07/09/2020
+ *      Author: Ruth Solis Velasco
  */
 
 #ifndef LINKEDLIST_H_
@@ -11,6 +11,7 @@
 #include <string>
 #include <sstream>
 #include "exception.h"
+using namespace std;
 
 template <class T> class List;
 template <class T> class ListIterator;
@@ -30,13 +31,41 @@ private:
 };
 
 template <class T>
-Link<T>::Link(T val) {}
+Link<T>::Link(T val) {
+	value = val;
+	next = NULL;
+}
 
 template <class T>
-Link<T>::Link(T val, Link* nxt) {}
+Link<T>::Link(T val, Link* nxt) {
+	value = val;
+	next = nxt;
+}
 
 template <class T>
-Link<T>::Link(const Link<T> &source) {}
+Link<T>::Link(const Link<T> &source){
+
+
+	//SOLUCION EN CLASE
+
+	//Validar si la lista esta vacia
+	/*if(source.empty()){
+		head = NULL;
+		size = 0;
+		return;
+	}
+
+	//Crear apuntador
+	Link<T>*actual = source.head;
+	//Recorrer la lista source
+	while (actual !=NULL){
+		//Por cada nodo que se visita, crear un nuevo nodo
+		add(actual->value);
+		actual = actual->next;
+		
+	}*/
+	
+}
 
 template <class T>
 class List {
@@ -76,20 +105,45 @@ private:
 };
 
 template <class T>
-List<T>::List(){}
+List<T>::List(){
+	head = NULL;
+	size = 0;
+}
 
 template <class T>
 List<T>::~List() {
+
 }
 
 template <class T>
 bool List<T>::empty() const {
-	return false;
+	
+	if(head == NULL){
+		return true;
+	}else{
+		return false;
+	}
 }
 
 template <class T>
 int List<T>::length() const {
-	return 0;
+	//cout<<"size = "<<size<<endl;
+	//return size;
+	
+	int i = 0;
+	if(head == NULL){
+		return i;
+	}
+
+	//Solucion en clase
+	Link<T> * ptr = head;
+	i++;
+	while(ptr -> next != NULL){
+		ptr = ptr->next;
+		i++;
+	}
+	cout<<"size = "<<i<<endl;
+	return i;
 }
 
 template <class T>
@@ -104,10 +158,52 @@ T List<T>::getFirst() const throw (NoSuchElement) {
 
 template <class T>
 void List<T>::addFirst(T val) throw (OutOfMemory) {
+	//SOLUCION EN CLASE
+
+	//Verificar si la lista esta vacia, agregar al pricipio
+	/*if (empty()){
+		addFirst(val);
+		return;
+	}*/
+	//Crear nuevo nodo con el valor val
+
+	Link<T> *nuevo = new Link<T>(val);
+
+	if (nuevo ==NULL){
+		throw OutOfMemory();
+	}
+	//Apuntar al siguiente del nuevo nodo a head
+	nuevo->next = head;
+	//Head apuntarlo al nuevo nodo
+	head = nuevo;
+	//Incrementar tamaño
+	size++;
 }
 
 template <class T>
 void List<T>::add(T val) throw (OutOfMemory) {
+	//SOLUCION EN CLASE
+
+	//Crear un nuevo nodo
+	Link<T> *nuevo = new Link<T>(val);
+
+	if (nuevo ==NULL){
+		throw OutOfMemory();
+	}
+
+	//Crear un apuntador actual
+	Link<T> *actual = head;
+
+	//Recorrer la lista hasta llegar al final
+	while(actual->next != NULL){
+		actual = actual->next;
+	}
+
+	//Apuntar actual al nuevo nodo
+	actual->next = nuevo;
+
+	//Aumentar el tamaño
+	size++;
 }
 
 template <class T>
