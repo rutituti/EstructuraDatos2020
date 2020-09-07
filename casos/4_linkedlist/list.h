@@ -136,7 +136,9 @@ bool List<T>::contains(T val) const {
 
 template <class T>
 T List<T>::getFirst() const throw (NoSuchElement) {
-	return 0;
+	if(head == NULL)
+		throw NoSuchElement();
+	return head->value;
 }
 
 template <class T>
