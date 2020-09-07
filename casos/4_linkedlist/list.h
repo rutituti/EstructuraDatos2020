@@ -194,7 +194,26 @@ void List<T>::add(T val) throw (OutOfMemory) {
 
 template <class T>
 T List<T>::removeFirst() throw (NoSuchElement) {
-	return 0;
+	//Crear apuntadores, uno que apunte al head y otro temporal
+	Link<T> *actual = head, *temp;
+
+	//Crear una variable temporal que guarde el valor del primer nodo a borrar
+	int first_value=head->value;
+
+	//Guardar el nodo siguiente del head en temp
+	temp = actual->next;
+
+	//Borrar actual
+	delete actual;
+
+	//Igualar el head al temp
+	head = temp;
+
+	//Decrementar el tamaño
+	size--;
+
+	//Regresar el valor del nodo borrado
+	return first_value;
 }
 
 template <class T>
