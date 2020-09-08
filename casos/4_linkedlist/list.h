@@ -223,12 +223,21 @@ T List<T>::removeFirst() throw (NoSuchElement) {
 
 template <class T>
 T List<T>::get(int index) const throw (IndexOutOfBounds, NoSuchElement) {
+	//Verificar que el indice sea correcto
+	if(index < 0){
+		throw IndexOutOfBounds();
+	}
+
+	//Crear apuntador al head
 	Link<T> *ptr = head;
+
+	//Recorrer la lista hasta el indice indicado
 	for (int i=0;i<index;i++){
 		ptr = ptr->next;
 		//cout<<"\nVALUE= "<<ptr->value<<endl;
 	}
 	
+	//Regresar el valor requerido de la lista
 	return ptr->value;
 }
 
