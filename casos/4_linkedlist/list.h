@@ -194,6 +194,11 @@ void List<T>::add(T val) throw (OutOfMemory) {
 
 template <class T>
 T List<T>::removeFirst() throw (NoSuchElement) {
+	//Verificar si la lista esta vacia
+	if(head == NULL){
+		throw NoSuchElement();
+	}
+
 	//Crear apuntadores, uno que apunte al head y otro temporal
 	Link<T> *actual = head, *temp;
 
@@ -218,7 +223,13 @@ T List<T>::removeFirst() throw (NoSuchElement) {
 
 template <class T>
 T List<T>::get(int index) const throw (IndexOutOfBounds, NoSuchElement) {
-	return 0;
+	Link<T> *ptr = head;
+	for (int i=0;i<index;i++){
+		ptr = ptr->next;
+		//cout<<"\nVALUE= "<<ptr->value<<endl;
+	}
+	
+	return ptr->value;
 }
 
 template <class T>
