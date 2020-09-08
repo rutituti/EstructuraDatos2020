@@ -224,9 +224,10 @@ T List<T>::removeFirst() throw (NoSuchElement) {
 template <class T>
 T List<T>::get(int index) const throw (IndexOutOfBounds, NoSuchElement) {
 	//Verificar que el indice sea correcto
-	if(index < 0){
+	if(index < 0 || index >= size){
 		throw IndexOutOfBounds();
 	}
+	
 
 	//Crear apuntador al head
 	Link<T> *ptr = head;
