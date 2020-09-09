@@ -143,6 +143,8 @@ public:
 		/* TEST 22 */
 		b2 = b1;
 		ASSERT_TRUE(3 == b2.length());
+		std::cout << "\n My Answer (lenght) = "<<b2.length()<<std::endl;
+		std::cout << "\n My Answer ="<<b2.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[2, 3, 4]", b2.toString().c_str()));
 		std::cout << " PASSED.\nTest 23";
 

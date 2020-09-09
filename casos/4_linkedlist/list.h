@@ -321,6 +321,26 @@ List<T>::List(const List<T> &source) throw (OutOfMemory) {
 
 template <class T>
 void List<T>::operator=(const List<T> &source) throw (OutOfMemory) {
+	//Borrar los datos de la lista a igualar
+	clear();
+	//Validar si la lista esta vacia
+	if(source.empty()){
+		return;
+	}
+
+	//Crear apuntador a head
+	Link<T>*actual = source.head;
+
+	//Recorrer la lista source
+	while (actual !=NULL){
+
+		cout<<"VALORES =  "<<actual->value<<endl;
+		
+		//Por cada nodo que se visita, crear un nuevo nodo
+		add(actual->value);
+		actual = actual->next;
+		
+	}
 }
 
 template <class T>
