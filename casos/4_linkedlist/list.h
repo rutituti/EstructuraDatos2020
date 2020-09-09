@@ -334,7 +334,7 @@ void List<T>::operator=(const List<T> &source) throw (OutOfMemory) {
 	//Recorrer la lista source
 	while (actual !=NULL){
 
-		cout<<"VALORES =  "<<actual->value<<endl;
+		//cout<<"VALORES =  "<<actual->value<<endl;
 		
 		//Por cada nodo que se visita, crear un nuevo nodo
 		add(actual->value);

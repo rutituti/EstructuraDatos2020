@@ -17,18 +17,18 @@ public:
 
 		/* TEST 1 */
 		std::cout << "Test 1";
-		std::cout << " My Answer "<<b1.length()<<std::endl;
+		//std::cout << " My Answer "<<b1.length()<<std::endl;
 		ASSERT_TRUE(0 == b1.length());
 		std::cout << " PASSED.\nTest 2";
 
 		/* TEST 2 */
-		std::cout << " My Answer "<<b1.toString().c_str()<<std::endl;
+		//std::cout << " My Answer "<<b1.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 3";
 
 		/* TEST 3 */
 		b1.addFirst(2);
-		std::cout << " My Answer "<<b1.length()<<std::endl;
+		//std::cout << " My Answer "<<b1.length()<<std::endl;
 		ASSERT_TRUE(1 == b1.length());
 		ASSERT_TRUE(!strcmp("[2]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 4";
@@ -143,8 +143,8 @@ public:
 		/* TEST 22 */
 		b2 = b1;
 		ASSERT_TRUE(3 == b2.length());
-		std::cout << "\n My Answer (lenght) = "<<b2.length()<<std::endl;
-		std::cout << "\n My Answer ="<<b2.toString().c_str()<<std::endl;
+		//std::cout << "\n My Answer (lenght) = "<<b2.length()<<std::endl;
+		//std::cout << "\n My Answer ="<<b2.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[2, 3, 4]", b2.toString().c_str()));
 		std::cout << " PASSED.\nTest 23";
 
