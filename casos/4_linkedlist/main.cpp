@@ -30,7 +30,7 @@ public:
 		b1.addFirst(2);
 		//std::cout << " My Answer "<<b1.length()<<std::endl;
 		ASSERT_TRUE(1 == b1.length());
-		std::cout<<"My answer "<<b1.toString().c_str()<<std::enld;
+		//std::cout<<"My answer "<<b1.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[2]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 4";
 

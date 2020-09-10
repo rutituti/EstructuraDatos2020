@@ -345,10 +345,47 @@ void List<T>::operator=(const List<T> &source) throw (OutOfMemory) {
 
 template <class T>
 void List<T>::addBefore(ListIterator<T> &itr, T val) throw (IllegalAction, OutOfMemory) {
+
 }
 
 template <class T>
 void List<T>::addAfter(ListIterator<T> &itr, T val) throw (IllegalAction, OutOfMemory) {
+	//Validar que el iterador es de la lista acutal
+	if(this != itr.theList){
+		throw IllegalAction();
+	}
+
+	//Al prinicipio
+	if(itr.current == head){
+		addFirst(val);
+		itr.current = head;
+		itr.previous = NULL;
+		return;
+	}	
+
+	//Crear nuevo nodo
+	Link<T> *nuevo = new Link<T> (val);
+
+	//Validar que se pudo crear
+	if(nuevo == 0){
+		throw OutOfMemory();
+	}
+
+	//Al final
+	if(itr.current == NULL){
+		
+		itr.previous->next = nuevo;
+		itr.current = nuevo;
+		size++;
+		
+	}else{
+	//En medio
+		nuevo->next = itr.current->next;
+		itr.current->next =nuevo;
+		size++;
+	}
+	
+
 }
 
 template <class T>
