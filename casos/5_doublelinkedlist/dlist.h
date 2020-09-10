@@ -31,13 +31,25 @@ private:
 };
 
 template <class T>
-DLink<T>::DLink(T val) {}
+DLink<T>::DLink(T val) {
+	value = val;
+	previous = NULL;
+	next = NULL;
+}
 
 template <class T>
-DLink<T>::DLink(T val, DLink *prev, DLink* nxt) {}
+DLink<T>::DLink(T val, DLink *prev, DLink* nxt) {
+	value = val;
+	previous = prev;
+	next = nxt;
+}
 
 template <class T>
-DLink<T>::DLink(const DLink<T> &source) {}
+DLink<T>::DLink(const DLink<T> &source) {
+	value = source.value;
+	previous = source.previous;
+	next = source.next;
+}
 
 template <class T>
 class DList {
@@ -80,7 +92,12 @@ private:
 };
 
 template <class T>
-DList<T>::DList() {}
+DList<T>::DList() {
+	head = NULL;
+	tail = NULL;
+	size = 0;
+
+}
 
 template <class T>
 DList<T>::~DList() {
@@ -89,7 +106,11 @@ DList<T>::~DList() {
 
 template <class T>
 bool DList<T>::empty() const {
-	return 0;
+    
+	if(head == NULL){
+		return true;
+	}
+	return false;
 }
 
 template <class T>
@@ -121,10 +142,53 @@ T DList<T>::getFirst() const throw (NoSuchElement) {
 
 template <class T>
 void DList<T>::addFirst(T val) throw (OutOfMemory) {
+	//Crear el nuevo nodo
+	DLink<T> *nuevo = new DLink<T>(val);
+	//Verificar que hay memoria disponible
+	if(nuevo == NULL){
+		throw OutOfMemory();
+	}
+	//1. Si la lista esta vacia
+		//Head = nuevo nodo
+		//Tail = nuevo nodo
+	if(empty()){
+		head = nuevo;
+		tail = nuevo;
+	}else{
+	
+	//2. Si no esta vacia
+		//Apuntar nuevo->next = head
+		//head->previo = nuevo
+		//head = nuevo
+		nuevo->next = head;
+    	head->previous = nuevo;
+    	head = nuevo;
+	}
+	//Aumentar el tamaño
+	size++;
+
 }
 
 template <class T>
 void DList<T>::add(T val) throw (OutOfMemory) {
+	//1. Si la lista esta vacia
+	//Head = nuevo nodo
+	//Tail = nuevo nodo
+	if(empty()){
+		addFirst(val);
+	}
+		//Crear el nuevo nodo
+	DLink<T> *nuevo = new DLink<T>(val);
+	//Verificar que hay memoria disponible
+	if(nuevo == NULL){
+		throw OutOfMemory();
+	}
+	
+	tail->next = nuevo;
+	nuevo->previous = tail;
+	tail = nuevo;
+	size++;
+
 }
 
 template <class T>

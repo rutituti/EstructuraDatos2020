@@ -30,6 +30,7 @@ public:
 		b1.addFirst(2);
 		//std::cout << " My Answer "<<b1.length()<<std::endl;
 		ASSERT_TRUE(1 == b1.length());
+		std::cout<<"My answer "<<b1.toString().c_str()<<std::enld;
 		ASSERT_TRUE(!strcmp("[2]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 4";
 
@@ -42,6 +43,7 @@ public:
 		/* TEST 5 */
 		b1.add(3);
 		ASSERT_TRUE(3 == b1.length());
+		
 		ASSERT_TRUE(!strcmp("[1, 2, 3]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 6";
 
@@ -161,7 +163,7 @@ public:
 
 		/* TEST 25 */
 		b1.addAfter(itr1,10);
-		ASSERT_TRUE(!strcmp("[2, 3, 10, 4", b1.toString().c_str()));
+		ASSERT_TRUE(!strcmp("[2, 3, 10, 4]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 26";
 
 		/* TEST 26 */
