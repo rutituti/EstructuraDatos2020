@@ -396,7 +396,7 @@ void DList<T>::operator=(const DList<T> &source) throw (OutOfMemory) {
 
 template <class T>
 void DList<T>::addBefore(DListIterator<T> &itr, T val) throw (IllegalAction, OutOfMemory) {
-	
+
 }
 
 template <class T>
@@ -449,6 +449,24 @@ int DList<T>::indexOf(T val) const {
 
 template <class T>
 int DList<T>::lastIndexOf(T val) const {
+	int index = 0, index_val = 0;
+	DLink<T> *p = head;
+	while (p != 0)
+	{
+		if(p-> value == val){
+			index_val = index;
+		}
+		index++;
+		p = p->next;
+	}
+
+	if(index != 0){
+		return index_val;
+	}else{
+		return -1;
+	}
+	
+
 }
 
 template <class T>
