@@ -193,6 +193,90 @@ void DList<T>::add(T val) throw (OutOfMemory) {
 
 template <class T>
 T DList<T>::removeFirst() throw (NoSuchElement) {
+	//SOLUCION EN CLASE
+
+	//Checar si la lista esta vacia
+	if (empty())
+	throw NoSuchElement();
+
+
+	int NEW_CODE = 1;
+
+	if(NEW_CODE){
+
+		if (head == tail){
+		  //Guardar el valor del nodo a borrar
+	 	   T victima = head->value;
+			delete head;
+			delete tail;
+			head = 0;
+			tail = 0;
+			size --;
+			return victima;
+		}
+		//Crear apuntador al nodo a borrar
+		DLink<T> * nodo_victima = head;
+
+		//Head es igual a su siguiente
+		head = head->next;
+
+		//El siguiente del nodo a borrar es igual a NULL
+		nodo_victima->next = NULL;
+
+		//El previo de head es igual a NULL
+		head->previous = NULL;
+
+		//Reducir el tamaño
+		size--;
+
+		//Guardar el valor del nodo a borrar
+	 	T victima = nodo_victima->value;
+
+		//Borrar nodo anterior
+		delete nodo_victima;
+
+		//Regresar el valor del nodo borrado
+		return victima;
+
+		
+	}else{
+
+	/*
+	OTRA IMPLEMENTACION
+	*/
+
+	if (head == tail){
+		//Guardar el valor del nodo a borrar
+	 	T victima = head->value;
+		delete head;
+		delete tail;
+		head = 0;
+		tail = 0;
+		size --;
+		return victima;
+	}
+	//El siguiente de head es igual a head
+	head = head->next;
+
+	//El siguiente del anterior de head es igual a NULL
+	head->previous->next = NULL;
+
+	//Guardar en una varibale temporal el previod e head
+	T victima = head->previous->value;
+	//Borrar el anterior de head
+	delete head->previous;
+
+	//Apuntar el anterior de head a NULL
+	head->previous = NULL;
+
+	//Reducir tamaño
+	size--;
+
+	return victima;
+	}
+
+
+
 }
 
 template <class T>
