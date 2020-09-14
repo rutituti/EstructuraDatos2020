@@ -396,6 +396,7 @@ void DList<T>::operator=(const DList<T> &source) throw (OutOfMemory) {
 
 template <class T>
 void DList<T>::addBefore(DListIterator<T> &itr, T val) throw (IllegalAction, OutOfMemory) {
+	
 }
 
 template <class T>
