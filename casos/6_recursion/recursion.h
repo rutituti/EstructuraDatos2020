@@ -129,7 +129,13 @@ bool find_rec(int arr[], int low, int high, int val) {
 }
 //Otener el numero mayor
 int max_seq(int arr[], int size) {
-	return 0;
+	int max = 0;
+	for(int i=0; i<size; i++){
+		if(arr[i] > max){
+			max = arr[i];
+		}
+	}
+	return max;
 }
 
 int max_rec(int arr[], int low, int high) {
