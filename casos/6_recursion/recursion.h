@@ -86,11 +86,26 @@ long fib_rec(int n) {
 
 //Greatest common divisor
 long gcd_seq(long a, long b) {
-	return 0;
+	int aux;
+
+	while (b != 0) {
+		aux = b;
+		b = a % b;
+		a = aux;
+	}
+	return a;
 }
 
 long gcd_rec(long a, long b) {
-	return 0;
+	int aux = b;
+	b = a % b;
+	a = aux;
+	if (b == 0){
+		return a;
+	}else{
+		return gcd_rec(a,b);
+	}
+	
 }
 
 //Buscar
