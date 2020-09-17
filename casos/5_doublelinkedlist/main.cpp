@@ -191,6 +191,8 @@ public:
 		/* TEST 31 */
 		ASSERT_TRUE(1 == b1.remove(4));
 		ASSERT_TRUE(6 == b1.length());
+		//std::cout << "\nMy Answer"<<b1.length()<<std::endl;
+		//std::cout << "\nMy Answer"<<b1.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[1, 1, 2, 4, 5, 1]", b1.toString().c_str()));
 		std::cout << " PASSED.\nTest 32";
 		
