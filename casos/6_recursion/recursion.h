@@ -110,6 +110,11 @@ long gcd_rec(long a, long b) {
 
 //Buscar
 bool find_seq(int arr[], int size, int val) {
+	for(int i=0; i<size ;i++){
+		if(arr[i] == val){
+			return true;
+		}
+	}
 	return false;
 }
 
