@@ -1,8 +1,8 @@
 /*
  * recursion.h
  *
- *  Created on: 10/09/2015
- *      Author: pperezm
+ *  Created on: 17/09/2020
+ *      Author: Ruth Solis Velasco
  */
 
 #ifndef RECURSION_H_
@@ -119,7 +119,7 @@ bool find_seq(int arr[], int size, int val) {
 }
 
 bool find_rec(int arr[], int low, int high, int val) {
-	if(low == high)
+	if(low > high)
 		return false;
 	if(arr[high] == val){
 		return true;
@@ -139,7 +139,15 @@ int max_seq(int arr[], int size) {
 }
 
 int max_rec(int arr[], int low, int high) {
-	return 0;
+	//SOLUCION AYUDA CON EL PROFE
+	if(low == high)
+	return arr[low];
+
+	if (arr[low] > arr[high]){
+		return max_rec(arr, low, high-1);
+	}else{
+		return max_rec(arr,low+1,high);
+	}
 }
 
 //Rregresar el valor de la localidad de un arreglo de mayor valor
