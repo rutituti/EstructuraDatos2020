@@ -119,9 +119,14 @@ bool find_seq(int arr[], int size, int val) {
 }
 
 bool find_rec(int arr[], int low, int high, int val) {
-	return false;
+	if(low == high)
+		return false;
+	if(arr[high] == val){
+		return true;
+	}else{
+		return find_rec(arr,low,high-1, val);
+	}
 }
-
 //Otener el numero mayor
 int max_seq(int arr[], int size) {
 	return 0;
