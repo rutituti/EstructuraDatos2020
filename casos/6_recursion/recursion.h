@@ -152,7 +152,15 @@ int max_rec(int arr[], int low, int high) {
 
 //Rregresar el valor de la localidad de un arreglo de mayor valor
 int unimodal_seq(int arr[], int size) {
-	return 0;
+	int max = 0;
+	int index = 0;
+	for(int i=0; i<size; i++){
+		if(arr[i] > max){
+			max = arr[i];
+			index = i;
+		}
+	}
+	return index;
 }
 //Funcion auxiliar para recursion de unimodal_rec
 int unimodal_rec(int arr[], int low, int high) {
