@@ -164,11 +164,18 @@ int unimodal_seq(int arr[], int size) {
 }
 //Funcion auxiliar para recursion de unimodal_rec
 int unimodal_rec(int arr[], int low, int high) {
-	return 0;
+	if(low == high)
+	return low;
+
+	if (arr[low] > arr[high]){
+		return unimodal_rec(arr, low, high-1);
+	}else{
+		return unimodal_rec(arr,low+1,high);
+	}
 }
 
 int unimodal_rec(int arr[], int size) {
-	return 0;
+	return unimodal_rec(arr,0,size-1);
 }
 
 //Busqueda binaria
