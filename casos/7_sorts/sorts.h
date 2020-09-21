@@ -40,12 +40,40 @@ void Sorts<T>::swap(std::vector<T> &v, int i, int j) {
 template <class T>
 std::vector<T> Sorts<T>::bubbleSort(const std::vector<T> &source) {
 	std::vector<T> v(source);
+		for(unsigned int i = 0; i < v.size(); i++){
+		int menor = i;
+		for(unsigned int j = i+1; j < v.size(); j++){
+			
+			if(v[j]< v[menor]){
+				menor = j;
+			}
+		}
+		if(menor != i){
+			swap(v,i,menor);
+		}
+	}
+
 	return v;
 }
 
 template <class T>
 std::vector<T> Sorts<T>::selectionSort(const std::vector<T> &source) {
 	std::vector<T> v(source);
+
+	//Selecciona el menor y lo pone al inicio del arreglo
+	for(unsigned int i = 0; i < v.size(); i++){
+		int menor = i;
+		for(unsigned int j = i+1; j < v.size(); j++){
+			
+			if(v[j]< v[menor]){
+				menor = j;
+			}
+		}
+		if(menor != i){
+			swap(v,i,menor);
+		}
+	}
+
 	return v;
 }
 
