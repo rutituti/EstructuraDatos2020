@@ -52,6 +52,7 @@ public:
 		
 		v = sorts.bubbleSort(source);
 		std::cout << "Test 1...";
+		std::cout << "My Answer "<<arrayToString(v)<<std::endl;
 		ASSERT_TRUE(!strcmp("[1, 3, 4, 5, 8, 11, 21, 28, 52, 54, 58, 61, 64, 65, 75, 78, 84, 91, 92, 92]",
 				            arrayToString(v).c_str()));
 		std::cout << "PASSED.\nTest 2...";
