@@ -78,6 +78,17 @@ std::vector<T> Sorts<T>::selectionSort(const std::vector<T> &source) {
 template <class T>
 std::vector<T> Sorts<T>::insertionSort(const std::vector<T> &source) {
 	std::vector<T> v(source);
+	int key, i, j;
+	for(j=1; j < v.size(); j++){
+		key = v[j];
+		i = j-1;
+
+		while(i >=0 && v[i] > key){
+			v[i+1] = v[i];
+			i--;
+		}
+		v[i+1] = key;
+	}
 	return v;
 }
 
