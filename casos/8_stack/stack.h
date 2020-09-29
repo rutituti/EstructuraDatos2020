@@ -63,7 +63,7 @@ void StackVector<T>::push(T val) throw (Overflow) {
 
 template <class T>
 T StackVector<T>::top() const throw (NoSuchElement) {
-	return 0;
+	return data[size-1];
 }
 
 template <class T>
