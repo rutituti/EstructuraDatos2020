@@ -11,6 +11,7 @@ public:
 		
 		/* TEST 1 */
 		std::cout << "Test 1...";
+		std::cout << "My Answer "<<s1.empty()<<std::endl;
 		ASSERT_TRUE(s1.empty());
 		std::cout << " PASSED.\nTest 2...";
 		
