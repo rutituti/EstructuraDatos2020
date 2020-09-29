@@ -131,11 +131,17 @@ void StackList<T>::push(T val) {
 
 template <class T>
 T StackList<T>::top() const throw (NoSuchElement) {
+	if(empty()){
+		throw NoSuchElement();
+	}
 	return data.front();
 }
 
 template <class T>
 void StackList<T>::pop() throw (NoSuchElement) {
+	if(empty()){
+		throw NoSuchElement();
+	}
 	data.pop_front();
 }
 
