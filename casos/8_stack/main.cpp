@@ -17,6 +17,7 @@ public:
 		
 		/* TEST 2 */
 		s1.push(4);
+		std::cout << "My Answer "<<s1.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[4]", s1.toString().c_str()));
 		std::cout << " PASSED.\nTest 3...";
 		

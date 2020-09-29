@@ -55,6 +55,7 @@ StackVector<T>::~StackVector() {
 
 template <class T>
 void StackVector<T>::push(T val) throw (Overflow) {
+	data[next] = val;
 }
 
 template <class T>
@@ -123,7 +124,7 @@ void StackList<T>::pop() throw (NoSuchElement) {
 
 template <class T>
 bool StackList<T>::empty() const {
-	if(data.empty()){
+	if(data.empty() == 0){
 		return true;
 	}else{
 		return false;
