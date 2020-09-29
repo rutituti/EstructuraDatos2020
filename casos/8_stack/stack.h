@@ -67,7 +67,7 @@ T StackVector<T>::top() const throw (NoSuchElement) {
 	if(empty()){
 		throw NoSuchElement();
 	}
-	return data[size-1];
+	return data[next-1];
 }
 
 template <class T>
