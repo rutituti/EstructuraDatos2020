@@ -64,6 +64,9 @@ void StackVector<T>::push(T val) throw (Overflow) {
 
 template <class T>
 T StackVector<T>::top() const throw (NoSuchElement) {
+	if(empty()){
+		throw NoSuchElement();
+	}
 	return data[size-1];
 }
 
@@ -75,6 +78,7 @@ void StackVector<T>::pop() throw (NoSuchElement) {
 	}
 	next--;
 	size--;
+	
 }
 
 template <class T>
