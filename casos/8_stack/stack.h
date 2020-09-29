@@ -126,6 +126,7 @@ public:
 
 template <class T>
 void StackList<T>::push(T val) {
+	data.push_back(val);
 }
 
 template <class T>
