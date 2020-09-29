@@ -139,7 +139,7 @@ void StackList<T>::pop() throw (NoSuchElement) {
 
 template <class T>
 bool StackList<T>::empty() const {
-	if(data.empty() == 0){
+	if(data.empty()){
 		return true;
 	}else{
 		return false;
