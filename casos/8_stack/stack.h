@@ -6,6 +6,7 @@
 #include <list>
 #include "exception.h"
 
+using namespace std;
 template <class T>
 class Stack {
 public:
@@ -68,6 +69,12 @@ T StackVector<T>::top() const throw (NoSuchElement) {
 
 template <class T>
 void StackVector<T>::pop() throw (NoSuchElement) {
+	//cout<<"NEXT "<<next<<endl;
+	if(empty()){
+		throw NoSuchElement();
+	}
+	next--;
+	size--;
 }
 
 template <class T>
