@@ -77,7 +77,7 @@ void StackVector<T>::pop() throw (NoSuchElement) {
 		throw NoSuchElement();
 	}
 	next--;
-	size--;
+	//size--;
 	
 }
 
