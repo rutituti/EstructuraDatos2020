@@ -55,7 +55,10 @@ StackVector<T>::~StackVector() {
 
 template <class T>
 void StackVector<T>::push(T val) throw (Overflow) {
-	data[next] = val;
+	if(next == size){
+		throw Overflow();
+	}
+	data[next++] = val;
 }
 
 template <class T>
