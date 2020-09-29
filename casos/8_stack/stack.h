@@ -37,6 +37,12 @@ public:
 
 template <class T>
 StackVector<T>::StackVector(unsigned int sze) throw (OutOfMemory) {
+	this.size = sze;
+	data = new T[sze];
+	if(data == 0){
+		throw OutOfMemory();
+	}
+	
 }
 
 template <class T>
