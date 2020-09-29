@@ -156,6 +156,7 @@ bool StackList<T>::empty() const {
 
 template <class T>
 void StackList<T>::clear() {
+	data.clear();
 }
 
 template <class T>
