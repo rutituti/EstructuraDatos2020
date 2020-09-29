@@ -126,16 +126,17 @@ public:
 
 template <class T>
 void StackList<T>::push(T val) {
-	data.push_back(val);
+	data.push_front(val);
 }
 
 template <class T>
 T StackList<T>::top() const throw (NoSuchElement) {
-	return 0;
+	return data.front();
 }
 
 template <class T>
 void StackList<T>::pop() throw (NoSuchElement) {
+	data.pop_front();
 }
 
 template <class T>

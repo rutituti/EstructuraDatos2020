@@ -118,6 +118,7 @@ public:
 		
 		/* TEST 19 */
 		s2.push(8);
+		//std::cout<<"My Answer "<<s2.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[8, 4]", s2.toString().c_str()));
 		std::cout << " PASSED.\nTest 20...";
 		
