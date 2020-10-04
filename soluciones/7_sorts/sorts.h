@@ -114,7 +114,7 @@ void Sorts<T>::mergeArray(std::vector<T> &A, std::vector<T> &B, int low, int mid
 	j = mid + 1;
 	k = low;
 
-	while (i <= mid &&j <= high) {
+	while (i <= mid &&j <= high) {//359   267 
 		if (A[i] < A[j]) {
 			B[k] = A[i];
 			i++;
@@ -124,6 +124,7 @@ void Sorts<T>::mergeArray(std::vector<T> &A, std::vector<T> &B, int low, int mid
 		}
 		k++;
 	}
+	//B[] 23567     9
 	if (i > mid) {
 		for (; j <= high; j++) {
 			B[k++] = A[j];
@@ -133,6 +134,7 @@ void Sorts<T>::mergeArray(std::vector<T> &A, std::vector<T> &B, int low, int mid
 			B[k++] = A[i];
 		}
 	}
+	//B[] 235679
 }
 
 template <class T>
