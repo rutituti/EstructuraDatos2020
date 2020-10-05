@@ -16,6 +16,7 @@ public:
 
 		/* TEST 2 */
 		s1.enqueue(4);
+		std::cout << "My answer"<<s1.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[4]", s1.toString().c_str()));
 		std::cout << " PASSED.\nTest 3...";
 

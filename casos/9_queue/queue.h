@@ -45,11 +45,19 @@ public:
 
 template <class T>
 QueueVector<T>::QueueVector(int sze) throw (OutOfMemory) {
-
+	size = sze;
+	data = new T[size];
+	if (data==0){
+		throw OutOfMemory();
+	}
+	head = 0;
+	tail = 0;
+	counter = 0;
 }
 
 template <class T>
 QueueVector<T>::~QueueVector() {
+	clear();
 
 }
 
@@ -69,7 +77,7 @@ void QueueVector<T>::enqueue(T val) throw (Overflow) {
        throw Overflow();
     }
     data[tail] = val;
-    tail = (tail + 1) % size;
+    tail = ++;
     counter ++;
 }
 
@@ -97,6 +105,7 @@ void QueueVector<T>::dequeue() throw (NoSuchElement) {
 
 template <class T>
 void QueueVector<T>::clear() {
+
     tail = 0;
     head = 0;
     counter = 0;
