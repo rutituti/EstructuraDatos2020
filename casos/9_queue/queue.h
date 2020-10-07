@@ -47,7 +47,7 @@ template <class T>
 QueueVector<T>::QueueVector(int sze) throw (OutOfMemory) {
 	size = sze;
 	data = new T[size];
-	if (data==0){
+	if (data == 0){
 		throw OutOfMemory();
 	}
 	head = 0;
@@ -63,44 +63,38 @@ QueueVector<T>::~QueueVector() {
 
 template <class T>
 bool QueueVector<T>::empty() const {
-    return (counter == 0)? true : false;
+	if (counter == 0)
+		return true;
+
+    return false;
 }
 
 template <class T>
 bool QueueVector<T>::full() const {
-    return (counter == size)? true : false;
+	if (counter == size)
+		return true;
+	
+    return false;
 }
 
 template <class T>
 void QueueVector<T>::enqueue(T val) throw (Overflow) {
-    if(full()){
-       throw Overflow();
-    }
-    data[tail] = val;
-    tail = ++;
-    counter ++;
+	data[tail] = val;
+	counter++;
 }
 
 template <class T>
 T QueueVector<T>::front() const throw (NoSuchElement) {
-    T aux;
 
-	if(empty()){throw NoSuchElement();}
 
-    aux = data[head];
-
-	return aux;
+	return 0;
 
 }
 
 template <class T>
 void QueueVector<T>::dequeue() throw (NoSuchElement) {
 
-    if(empty()){
-        throw NoSuchElement();
-    }
-    head = (head + 1 ) % size;
-    counter --;
+
 }
 
 template <class T>
