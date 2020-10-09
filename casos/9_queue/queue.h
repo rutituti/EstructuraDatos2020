@@ -80,9 +80,9 @@ bool QueueVector<T>::full() const {
 
 template <class T>
 void QueueVector<T>::enqueue(T val) throw (Overflow) {
-	if (full()) {
+	if (full()) 
 		throw Overflow();
-	}
+	
 	data[tail] = val;
 	tail = (tail+1) % size;
 	counter++;
@@ -90,9 +90,11 @@ void QueueVector<T>::enqueue(T val) throw (Overflow) {
 
 template <class T>
 T QueueVector<T>::front() const throw (NoSuchElement) {
+	if (empty()) 
+		throw NoSuchElement();
+	
 
-
-	return 0;
+	return data[head];
 
 }
 
