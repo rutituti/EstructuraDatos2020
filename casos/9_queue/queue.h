@@ -100,7 +100,11 @@ T QueueVector<T>::front() const throw (NoSuchElement) {
 
 template <class T>
 void QueueVector<T>::dequeue() throw (NoSuchElement) {
-
+	if (empty()) 
+		throw NoSuchElement();
+	
+	head = (head + 1) % size;
+	counter--;
 
 }
 

@@ -55,6 +55,7 @@ public:
 
 		/* TEST 9 */
 		s1.dequeue();
+		std::cout<<"My answer "<<s1.front()<<std::endl;
 		ASSERT_TRUE(8 == s1.front());
 		std::cout << " PASSED.\nTest 10...";
 
