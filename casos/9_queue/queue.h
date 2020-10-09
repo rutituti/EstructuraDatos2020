@@ -71,6 +71,7 @@ bool QueueVector<T>::empty() const {
 
 template <class T>
 bool QueueVector<T>::full() const {
+	
 	if (counter == size)
 		return true;
 	
@@ -79,7 +80,11 @@ bool QueueVector<T>::full() const {
 
 template <class T>
 void QueueVector<T>::enqueue(T val) throw (Overflow) {
+	if (full()) {
+		throw Overflow();
+	}
 	data[tail] = val;
+	tail = (tail+1) % size;
 	counter++;
 }
 
