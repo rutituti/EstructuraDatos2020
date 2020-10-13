@@ -161,6 +161,7 @@ int TreeNode::howManyLeaves() const {
 }
 
 char TreeNode::minValue() const {
+	
 	return '9';
 }
 
@@ -352,6 +353,9 @@ int EvalTree::howManyLeaves() const {
 }
 
 char EvalTree::minValue() const throw (IllegalAction) {
+	if(empty()){
+		throw IllegalAction();
+	}
 	return '9';
 }
 
