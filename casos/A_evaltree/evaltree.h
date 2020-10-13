@@ -143,19 +143,21 @@ void TreeNode::preorder(std::stringstream &aux) const {
 
 int TreeNode::howManyLeaves() const {
 	//printf("AQUI");
-	int count=0;
+	int count=0, count_left=0, count_right=0, total_count=0;
 	if(left != NULL){
-		left->howManyLeaves();
-	}else{
-		count++;
-		printf("COUNT = %i\n",count);
+		count_left = left->howManyLeaves();
 	}
 
 	//Recorrido in order rama derecha
 	if(right != NULL){
-		right->howManyLeaves();
+		count_right = right->howManyLeaves();
 	}
-	return count;
+	
+	if((count_right+count_left) == 0){
+		return 1;
+	}else{
+		return count_right+count_left;
+	}
 }
 
 char TreeNode::minValue() const {
