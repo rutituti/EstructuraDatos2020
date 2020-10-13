@@ -70,6 +70,7 @@ public:
 		std::cout << " PASSED.\nTest 11";
 
 		/* TEST 11 */
+		std::cout << "My answer "<<a.howManyLeaves();
 		ASSERT_TRUE(a.howManyLeaves() == 5);
 		std::cout << " PASSED.\nTest 12";
 

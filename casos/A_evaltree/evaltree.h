@@ -148,6 +148,7 @@ int TreeNode::howManyLeaves() const {
 		left->howManyLeaves();
 	}else{
 		count++;
+		printf("COUNT = %i\n",count);
 	}
 
 	//Recorrido in order rama derecha
