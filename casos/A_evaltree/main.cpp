@@ -84,6 +84,7 @@ public:
 		}
 
 		/* TEST 13 */
+		std::cout << "My answer "<<a.minValue()<<std::endl;
 		ASSERT_TRUE(a.minValue() == '1');
 		std::cout << " PASSED.\nTest 14";
 

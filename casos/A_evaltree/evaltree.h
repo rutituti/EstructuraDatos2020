@@ -143,7 +143,7 @@ void TreeNode::preorder(std::stringstream &aux) const {
 
 int TreeNode::howManyLeaves() const {
 	//printf("AQUI");
-	int count=0, count_left=0, count_right=0, total_count=0;
+	int count_left=0, count_right=0;
 	if(left != NULL){
 		count_left = left->howManyLeaves();
 	}
@@ -161,8 +161,31 @@ int TreeNode::howManyLeaves() const {
 }
 
 char TreeNode::minValue() const {
-	
-	return '9';
+	//printf("AQUI");
+	char min='9', left_value='9', right_value='9'; 
+
+	//printf("Value = (%i)(%c) | MIN= (%i)(%c)\n",value,value, min, min);
+	//Recorrido in order rama derecha
+	if(isOperand()){
+		min = value;
+	}else{
+		if(left != NULL){
+			left_value = left->minValue();
+		}
+		if(right != NULL){
+		//printf("AQUI");
+			right_value= right->minValue();
+		}
+
+		if(left_value < right_value){
+			min = left_value;
+		}else{
+			min = right_value;
+		}
+	}
+
+
+	return min;
 }
 
 bool TreeNode::find(char val) const {
@@ -355,8 +378,10 @@ int EvalTree::howManyLeaves() const {
 char EvalTree::minValue() const throw (IllegalAction) {
 	if(empty()){
 		throw IllegalAction();
+	}else{
+		return root->minValue();
 	}
-	return '9';
+	
 }
 
 bool EvalTree::find(char c) const {
