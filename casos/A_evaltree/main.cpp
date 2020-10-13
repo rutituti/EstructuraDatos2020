@@ -31,6 +31,7 @@ public:
 		EvalTree b;
 
 		/* TEST 2 */
+		std::cout << "My Answer "<<a.inorder().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("1 + x * 2 - x * x ", a.inorder().c_str()));
 		std::cout << " PASSED.\nTest 3";
 
@@ -47,6 +48,7 @@ public:
 		std::cout << " PASSED.\nTest 6";
 
 		/* TEST 6 */
+		std::cout << "My Answer "<<b.empty()<<std::endl;
 		ASSERT_TRUE(b.empty() == true);
 		std::cout << " PASSED.\nTest 7";
 
@@ -63,6 +65,7 @@ public:
 		std::cout << " PASSED.\nTest 10";
 
 		/* TEST 10 */
+		std::cout << "My answer "<<b.howManyLeaves();
 		ASSERT_TRUE(b.howManyLeaves() == 0);
 		std::cout << " PASSED.\nTest 11";
 
