@@ -189,7 +189,7 @@ char TreeNode::minValue() const {
 }
 
 bool TreeNode::find(char val) const {
-	bool found;
+	bool found = false;
 	if(val == value){
 		return true;
 	}
@@ -209,6 +209,7 @@ bool TreeNode::find(char val) const {
 		}
 	}
 	
+	return found;
 }
 
 double TreeNode::eval(double x) const {

@@ -94,6 +94,7 @@ public:
 		std::cout << " PASSED.\nTest 15";
 
 		/* TEST 15 */
+		std::cout << "My answer "<<a.find('9')<<std::endl;
 		ASSERT_TRUE(a.find('9') == false);
 		std::cout << " PASSED.\nTest 16";
 
