@@ -189,23 +189,25 @@ char TreeNode::minValue() const {
 }
 
 bool TreeNode::find(char val) const {
-	char left_value='0', right_value='0';
-	if(val == left_value || val ==right_value){
+	bool found;
+	if(val == value){
 		return true;
-	}else{
-		//printf("AQUI");
-		if(left != NULL){
-			//cout<<"LEFT VALUE - "<< left_value;
-			left_value = left->minValue();
-		}
-		if(right != NULL){
-		
-		    //cout<<"LEFT VALUE - "<< left_value;
-			right_value= right->minValue();
-		}
-		
 	}
-	//return false;
+	
+	if(left != NULL){
+		if(found || left->find(val)){
+			found = true;
+		}else{
+			found = false;
+		}
+	}
+	if(right != NULL){
+		if(found || right->find(val)){
+			found = true;
+		}else{
+			found = false;
+		}
+	}
 	
 }
 
