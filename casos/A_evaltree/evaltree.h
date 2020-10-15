@@ -213,6 +213,36 @@ bool TreeNode::find(char val) const {
 }
 
 double TreeNode::eval(double x) const {
+	double left_value, right_value;
+	if(isVariable()){
+		return x;
+	}
+
+	if(isOperand()){
+		//printf("\n%i - %i = %i\n",value,'0',(value - '0'));
+		return value - '0';
+	}
+
+	if(isOperator()){
+		if(left != NULL){
+			left_value = left->eval(x);
+		}
+	
+	    if(right != NULL){
+			right_value = right->eval(x);
+	    }
+
+		if( value == '+') return left_value + right_value;
+		if( value == '-') return left_value - right_value;
+		if( value == '*') return left_value * right_value;
+		if( value == '/') {
+			if(right_value == 0){
+				throw IllegalAction();
+			}else{
+				return left_value / right_value;
+			}
+		}
+	}
 	return 0;
 }
 
@@ -410,7 +440,7 @@ bool EvalTree::find(char c) const {
 }
 
 double EvalTree::eval(double x) const throw (IllegalAction) {
-	return 0.0;
+	return root->eval(x);
 }
 
 EvalTree* EvalTree::derive() const {

@@ -99,6 +99,7 @@ public:
 		std::cout << " PASSED.\nTest 16";
 
 		/* TEST 16 */
+		std::cout << "My answer "<<a.eval(3)<<std::endl;
 		ASSERT_TRUE(a.eval(3) == -2);
 		std::cout << " PASSED.\nTest 17";
 
