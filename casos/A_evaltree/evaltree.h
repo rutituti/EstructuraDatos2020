@@ -213,6 +213,7 @@ bool TreeNode::find(char val) const {
 }
 
 double TreeNode::eval(double x) const {
+	//AYUDA DEL SOLUCIONARIO
 	double left_value, right_value;
 	if(isVariable()){
 		return x;
