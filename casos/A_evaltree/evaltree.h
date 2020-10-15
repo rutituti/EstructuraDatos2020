@@ -189,7 +189,24 @@ char TreeNode::minValue() const {
 }
 
 bool TreeNode::find(char val) const {
-	return false;
+	char left_value='0', right_value='0';
+	if(val == left_value || val ==right_value){
+		return true;
+	}else{
+		//printf("AQUI");
+		if(left != NULL){
+			//cout<<"LEFT VALUE - "<< left_value;
+			left_value = left->minValue();
+		}
+		if(right != NULL){
+		
+		    //cout<<"LEFT VALUE - "<< left_value;
+			right_value= right->minValue();
+		}
+		
+	}
+	//return false;
+	
 }
 
 double TreeNode::eval(double x) const {
@@ -385,7 +402,8 @@ char EvalTree::minValue() const throw (IllegalAction) {
 }
 
 bool EvalTree::find(char c) const {
-	return false;
+	return root->find(c);
+	
 }
 
 double EvalTree::eval(double x) const throw (IllegalAction) {

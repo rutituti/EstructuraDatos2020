@@ -89,6 +89,7 @@ public:
 		std::cout << " PASSED.\nTest 14";
 
 		/* TEST 14 */
+		std::cout << "My answer "<<a.find('1')<<std::endl;
 		ASSERT_TRUE(a.find('1') == true);
 		std::cout << " PASSED.\nTest 15";
 
