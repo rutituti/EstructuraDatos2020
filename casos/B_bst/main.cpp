@@ -26,6 +26,8 @@ public:
 		
 		/* TEST 2 */
 		bst.add(15);
+		std::cout << "My answer"<<bst.inorder().c_str();
+		std::cout << "My answer"<<bst.preorder().c_str();
 		ASSERT_TRUE(!strcmp("[15]", bst.inorder().c_str()));
 		ASSERT_TRUE(!strcmp("[15]", bst.preorder().c_str()));
 		std::cout << " PASSED.\nTest 3...";
