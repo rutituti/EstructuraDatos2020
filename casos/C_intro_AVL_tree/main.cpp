@@ -28,9 +28,13 @@ public:
 		
 		/* TEST 2 */
 		ASSERT_TRUE(3 == a.internalNodes());
+		std::cout << "My answer"<<a.internalNodes()<<std::endl;
 		ASSERT_TRUE(5 == b.internalNodes());
+		std::cout << "My answer"<<b.internalNodes()<<std::endl;
 		ASSERT_TRUE(5 == c.internalNodes());
+		std::cout << "My answer"<<c.internalNodes()<<std::endl;
 		ASSERT_TRUE(0 == d.internalNodes());
+		std::cout << "My answer"<<d.internalNodes()<<std::endl;
 		std::cout << " PASSED.\nTest 3...";
 		
 		/* TEST 3 */

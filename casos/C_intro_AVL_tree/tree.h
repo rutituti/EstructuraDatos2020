@@ -11,7 +11,7 @@
 #include <string>
 #include <sstream>
 #include "exception.h"
-
+using namespace std;
 class SimpleTree;
 
 class TreeNode {
@@ -54,11 +54,32 @@ void TreeNode::removeChilds() {
 }
 
 bool TreeNode::isFull() const {
+		//Si no tiene hijos, esta lleno
+	if (left == NULL && right == NULL){
+		return true;
+	}
+	//Si hijo izquierdo y esta lleno y tiene hijo derecho y esta lleno, devolver true
+	if (left != NULL && right != NULL && left->isFull() && right->isFull()){
+		return true;
+	}
 	return false;
 }
 
 int TreeNode::internalNodes() const {
-	return 0;
+
+	if(isLeaf()){
+		return 0;
+	}
+	int result = 1;
+
+	if(left != NULL){
+		result = result + left->internalNodes();
+	}
+	
+	if(right != NULL){
+		result = result + right->internalNodes();
+	}
+	return result;
 }
 
 int TreeNode::depth() const {
