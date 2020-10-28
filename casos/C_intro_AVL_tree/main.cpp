@@ -46,13 +46,13 @@ public:
 		
 		/* TEST 4 */
 		ASSERT_FALSE(a.isDegenerate());
-		std::cout << "\nMy answer"<<a.isDegenerate()<<std::endl;
+		//std::cout << "\nMy answer"<<a.isDegenerate()<<std::endl;
 		ASSERT_FALSE(b.isDegenerate());
-		std::cout << "\nMy answer"<<b.isDegenerate()<<std::endl;
+		//std::cout << "\nMy answer"<<b.isDegenerate()<<std::endl;
 		ASSERT_TRUE(c.isDegenerate());
-		std::cout << "\nMy answer"<<c.isDegenerate()<<std::endl;
+		//std::cout << "\nMy answer"<<c.isDegenerate()<<std::endl;
 		ASSERT_FALSE(d.isDegenerate());
-		std::cout << "\nMy answer"<<d.isDegenerate()<<std::endl;
+		//std::cout << "\nMy answer"<<d.isDegenerate()<<std::endl;
 		std::cout << " PASSED.\n";
 	}
 };

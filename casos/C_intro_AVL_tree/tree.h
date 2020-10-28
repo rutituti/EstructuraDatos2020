@@ -122,25 +122,33 @@ bool TreeNode::isLeaf() const {
 
 
 bool TreeNode::isDegenerate() const {
-	if(depth() == 1){
+	//Solucion de solucionario
+	
+	if (isLeaf()) {
 		return false;
 	}
-	int le = -1;
-	int ri = -1;
-	int de = -1;
-
+	
+	if (left != 0 && right != 0) {
+		return false;
+	}
+	
 	if (left != 0) {
-		le = left->depth();
+		if (left->isLeaf()) {
+			return true;
+		} else {
+			return left->isDegenerate();
+		}
 	}
+	
 	if (right != 0) {
-		ri = right->depth();
+		if (right->isLeaf()) {
+			return true;
+		} else {
+			return right->isDegenerate();
+		}
 	}
-
-	if(le == 0 || ri == 0){
-		return true;
-	}else{
-		return false;
-	}
+	
+	return true;
 }
 
 class SimpleTree {
