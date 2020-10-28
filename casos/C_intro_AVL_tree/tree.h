@@ -98,7 +98,22 @@ int TreeNode::depth() const {
 }
 
 bool TreeNode::isPerfect() const {
-	return false;		
+		int le = -1;
+	int ri = -1;
+	int de = -1;
+
+	if (left != 0) {
+		le = left->depth();
+	}
+	if (right != 0) {
+		ri = right->depth();
+	}
+	if(le == ri){
+		return true;
+	}else{
+		return false;
+	}
+			
 }
 
 bool TreeNode::isLeaf() const {
@@ -107,7 +122,25 @@ bool TreeNode::isLeaf() const {
 
 
 bool TreeNode::isDegenerate() const {
-	return false;
+	if(depth() == 1){
+		return false;
+	}
+	int le = -1;
+	int ri = -1;
+	int de = -1;
+
+	if (left != 0) {
+		le = left->depth();
+	}
+	if (right != 0) {
+		ri = right->depth();
+	}
+
+	if(le == 0 || ri == 0){
+		return true;
+	}else{
+		return false;
+	}
 }
 
 class SimpleTree {
