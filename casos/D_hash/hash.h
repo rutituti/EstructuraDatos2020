@@ -198,7 +198,8 @@ bool HashTable<Key, Value>::contains(const Key k) const {
  * @return Value: El valor de la llave
  **/
 template <class Key, class Value>
-Value HashTable<Key, Value>::get(const Key k) throw (NoSuchElement) 
+Value HashTable<Key, Value>::get(const Key k) throw (NoSuchElement) {
+
   int index= indexOf(k);
   //Obtener el índice de la llave
 
@@ -218,8 +219,14 @@ Value HashTable<Key, Value>::get(const Key k) throw (NoSuchElement)
 template <class Key, class Value>
 void HashTable<Key, Value>::clear() {
 	//Recorre el vector de llaves y les asigna el valor inicial
-
+  for (int i = 0; i < size; i++) {
+    keys[i] = initialValue;
+  }
+  for (int i = 0; i < size; i++) {
+    values[i] = 0;
+  }
   //Asigna 0 al contador de elementos
+  count = 0;
 }
 
 template <class Key, class Value>
