@@ -30,6 +30,7 @@ public:
 		/* TEST 1 */
 		cout << "Test 1...\n";
 		HashTable<string, int> hash(10, string("empty"), myHash);
+		//std::cout << "My answer: "<<hash.toString().c_str()<<std::endl;
 		ASSERT_TRUE(!strcmp("[ 0, empty, 0]\n[ 1, empty, 0]\n[ 2, empty, 0]\n[ 3, empty, 0]\n[ 4, empty, 0]\n[ 5, empty, 0]\n[ 6, empty, 0]\n[ 7, empty, 0]\n[ 8, empty, 0]\n[ 9, empty, 0]\n", hash.toString().c_str()));
 		std::cout << " PASSED.\nTest 2...";
 		
@@ -41,6 +42,7 @@ public:
 		hash.put(string("magneto"), 17);
 		hash.put(string("operador"), 18);
 		hash.put(string("taza"), 18);
+		
 		ASSERT_TRUE(!strcmp("[ 0, operador, 18]\n[ 1, empty, 0]\n[ 2, amos, 15]\n[ 3, taza, 18]\n[ 4, empty, 0]\n[ 5, caza, 13]\n[ 6, empty, 0]\n[ 7, tecnica, 11]\n[ 8, casa, 12]\n[ 9, magneto, 17]\n", hash.toString().c_str()));
 		std::cout << " PASSED.\nTest 3...";
 		
