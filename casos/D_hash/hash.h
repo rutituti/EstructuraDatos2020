@@ -222,9 +222,6 @@ void HashTable<Key, Value>::clear() {
   for (int i = 0; i < size; i++) {
     keys[i] = initialValue;
   }
-  for (int i = 0; i < size; i++) {
-    values[i] = 0;
-  }
   //Asigna 0 al contador de elementos
   count = 0;
 }
